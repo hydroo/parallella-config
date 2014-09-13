@@ -1,0 +1,15 @@
+sudo useradd -U -m -r -p PASSWORD brendel
+
+sudo adduser brendel adm
+sudo adduser brendel dialout
+sudo adduser brendel cdrom
+sudo adduser brendel audio
+sudo adduser brendel dip
+sudo adduser brendel video
+sudo adduser brendel plugdev
+
+#change login shell to bash
+sudo chsh -s /bin/bash brendel
+
+#use xtemp, part of the parallela ppa, to observe temperature of the chip(s). below 85deg is ok, below 70deg is normal.
+xtemp
