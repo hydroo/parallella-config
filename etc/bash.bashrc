@@ -74,10 +74,10 @@ alias l='ls -la'
 
 export EPIPHANY_HOME=/opt/adapteva/esdk
 export EPIPHANY_TESTS=/home/brendel/adapteva-epiphany-examples-git
-. ${EPIPHANY_HOME}/setup.sh
+source ${EPIPHANY_HOME}/setup.sh
 
 export PATH=/usr/local/browndeer/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/browndeer/lib:/usr/local/lib:$EPIPHANY_HOME/host/lib:$LD_LIBRARY_PATH
-export LIBRARY_PATH=/usr/local/browndeer/lib:/usr/local/lib:$EPIPHANY_HOME/host/lib:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/browndeer/lib:/usr/local/lib:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/usr/local/browndeer/lib:/usr/local/lib:$LIBRARY_PATH
 
 tabs 4
