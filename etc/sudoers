@@ -10,7 +10,7 @@ Defaults	env_reset
 Defaults	mail_badpass
 Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-Defaults	env_keep += "EPIPHANY_HOME EPIPHANY_HDF EPIPHANY_TESTS PATH LIBRARY_PATH LD_LIBRARY_PATH"
+Defaults	env_keep += "EPIPHANY_HDF"
 
 # Host alias specification
 
