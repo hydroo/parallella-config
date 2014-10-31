@@ -1,0 +1,41 @@
+$ sudo apt-get install isc-dhcp-server
+
+$ diff etc/default/isc-dhcp-server /etc/default/isc-dhcp-server
+21c21
+< INTERFACES=""
+---
+> INTERFACES="eth0"
+
+$ diff etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf
+110a111,128
+> 
+> subnet 192.168.1.0 netmask 255.255.255.0 {
+> 
+>   option routers                  192.168.1.1;
+>   option subnet-mask              255.255.255.0;
+>   option broadcast-address        192.168.1.255;
+>   option domain-name-servers      194.168.4.100;
+>   option ntp-servers              192.168.1.1;
+>   option netbios-name-servers     192.168.1.1;
+>   option netbios-node-type 2;
+>   default-lease-time 86400;
+>   max-lease-time 86400;
+> 
+>   host andy {
+>       hardware ethernet 04:4f:8b:00:2b:67;
+>       fixed-address 192.168.1.4;
+>   }
+> }
+
+$ diff etc/network/interfaces /etc/network/interfaces
+10a11,14
+> 
+> iface eth0 inet static
+>   address 192.168.1.3
+>   netmask 255.255.255.0
+
+$ sudo ifup eth0
+$ sudo service isc-dhcp-server {start, stop, restart}
+
+
+# /etc/network/interfaces has to be changed back to access normal networks again
