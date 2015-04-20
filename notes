@@ -13,3 +13,6 @@ sudo chsh -s /bin/bash brendel
 
 #use xtemp, part of the parallela ppa, to observe temperature of the chip(s). below 85deg is ok, below 70deg is normal.
 xtemp
+
+#when adding a new user use this to give him sudo
+sudo adduser USER admin
